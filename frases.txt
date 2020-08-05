@@ -1,0 +1,4 @@
+"Ache o consultor correto para o seu caso clínico"
+"OrthoConsult" - Seu consultor para aquele caso clínico que não te deixa dormir a noite.
+"ImplantConsult" - Faça o seu planejamento reverso da maneira correta e restaure a confiança e sorriso dos seus pacientes.
+
