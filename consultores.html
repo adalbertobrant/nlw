@@ -29,54 +29,115 @@
             próximo nível !</strong
           >
           <form id="search-teachers">
-            ```html
-            <form id="search-teachers">
-              <div class="select-block">
-                <label for="subject">Matéria</label>
-                <select name="subject" id="subject">
-                  <option value="" disabled="" hidden=""
-                    >Selecione uma opção</option
-                  >
-                  <option value="1">Cefalometria</option>
-                  <option value="2">Análise Facial</option>
-                  <option value="3">Análise 3D</option>
-                  <option value="4">Análise Dinâmica das Arcadas</option>
-
-                  <option value="5">Aparatologia Extra-Facial</option>
-                  <option value="6">Aparelhos Ortopédicos - Intra Orais</option>
-                  <option value="7">Fios Ortodonticos</option>
-                  <option value="8">Ética Ortodôntica</option>
-                  <option value="9">Mecânica Ortodôntica</option>
-
-                  <option value="10">Discrepâncias Dentárias</option>
-                  <option value="11">Marketing Ortodôntico</option>
-                </select>
-              </div>
-              <div class="select-block">
-                <label for="weekday">Dia da semana</label>
-                <select name="weekday" id="weekday">
-                  <option value="" disabled="" hidden=""
-                    >Selecione uma opção</option
-                  >
-                  <option value="0">Domingo</option>
-                  <option value="1">Segunda-feira</option>
-                  <option value="2">Terça-feira</option>
-                  <option value="3">Quarta-feira</option>
-                  <option value="4">Quinta-feira</option>
-                  <option value="5">Sexta-feira</option>
-                  <option value="6">Sábado</option>
-                </select>
-              </div>
-              <div class="input-block">
-                <label for="time">Hora</label>
-                <input name="time" id="time" type="time" />
-              </div>
-              <button type="submit">Filtrar</button>
-            </form>
-            ```
+            <div class="select-block">
+              <label for="subject">Consultoria</label>
+              <select name="subject" id="subject">
+                <option value="" disabled="" hidden=""
+                  >Selecione uma opção</option
+                >
+                <option value="1">Planejamento Ortodôntico</option>
+                <option value="2">Análise Facial</option>
+                <option value="3">Análise 3D</option>
+                <option value="4">Análise Dinâmica das Arcadas</option>
+                <option value="5">Aparatologia Extra-Facial</option>
+                <option value="6">Aparelhos Ortopédicos - Intra Orais</option>
+                <option value="7">Fios Ortodonticos</option>
+                <option value="8">Ética Ortodôntica</option>
+                <option value="9">Mecânica Ortodôntica</option>
+                <option value="10">Discrepâncias Dentárias</option>
+                <option value="11">Marketing Ortodôntico</option>
+                <option value="12">Artigos,Monografias,Dissertações</option>
+              </select>
+            </div>
+            <div class="select-block">
+              <label for="weekday">Dia da semana</label>
+              <select name="weekday" id="weekday">
+                <option value="" disabled="" hidden=""
+                  >Selecione uma opção</option
+                >
+                <option value="0">Domingo</option>
+                <option value="1">Segunda-feira</option>
+                <option value="2">Terça-feira</option>
+                <option value="3">Quarta-feira</option>
+                <option value="4">Quinta-feira</option>
+                <option value="5">Sexta-feira</option>
+                <option value="6">Sábado</option>
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="time">Hora</label>
+              <input
+                name="time"
+                id="time"
+                type="time"
+                min="08:00"
+                max="21:00"
+                required
+              />
+            </div>
+            <button type="submit">Filtrar</button>
           </form>
         </div>
       </header>
+      <main>
+        <article>
+          <header>
+            <img
+              src="./images/consultor/lauraCarvalho.png"
+              alt="Laura Carvalho"
+            />
+            <div>
+              <strong>
+                Dra. Laura Carvalho
+                <p><span>Ortodontia Arcos Gummetal</span></p>
+              </strong>
+            </div>
+          </header>
+          <p>
+            Autora do livro Tratamento das más oclusões, com ênfase no plano
+            oclusal posterior. Responsável pela introdução da técnica do
+            Dr.Sadao Sato no Brasil, profunda conhecedora da Ortodontia com
+            Arcos Gummetal. Professora a mais de 30 anos de diagnóstico,
+            mecânica e técnicas ortodônticas em Ortodontia Bioprogressiva.
+          </p>
+          <footer>
+            <p>Preço/consultoria <strong>R$200,00</strong></p>
+            <button type="button">
+              <img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Entre em
+              contato
+            </button>
+          </footer>
+        </article>
+
+        <article>
+          <header>
+            <img
+              src="./images/consultor/marisaManhas.png"
+              alt="Laura Carvalho"
+            />
+            <div>
+              <strong>
+                Dra. Marisa Manhas
+                <p><span>Ortodontia Arcos Gummetal</span></p>
+              </strong>
+            </div>
+          </header>
+          <p>
+            Autora do livro Tratamento das más oclusões, com ênfase no plano
+            oclusal posterior. Uma das responsáveis pela introdução da técnica
+            do Dr.Sadao Sato no Brasil, profunda conhecedora da Ortodontia com
+            Arcos Gummetal. Professora a mais de 30 anos de diagnóstico,
+            mecânica e técnicas ortodônticas em Ortodontia Bioprogressiva.
+          </p>
+          <footer>
+            <p>Preço/consultoria <strong>R$200,00</strong></p>
+            <button type="button">
+              <img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Entre em
+              contato
+            </button>
+          </footer>
+        </article>
+      </main>
     </div>
   </body>
 </html>
