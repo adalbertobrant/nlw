@@ -10,4 +10,10 @@
 Página Consultores.html 
 
 "Esses são os Consultores disponíveis para levar sua Ortodontia ao próximo nível!"
+"Consultores que com certeza vão lhe levar para o próximo nível !"
+"Consultores Dedicados a seu Sucesso Profissional!"
 =========================
+Página give-classes.html
+"Super Incrível, Obrigado por escolher a Ortho Consult para realizar a sua consultoria !"
+"Segurança e Paz para a sua Consultoria Ortodôntica !"
+
