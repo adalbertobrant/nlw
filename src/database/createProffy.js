@@ -39,10 +39,10 @@ module.exports = async function (
 			 time_from,
 			 time_to
 		 ) VALUES (
-			${class_id},
-			${value.weekday},
-			 ${value.time_from},
-			 ${value.time_to}
+			"${class_id}",
+			"${value.weekday}",
+			 "${value.time_from}",
+			 "${value.time_to}"
 		 ); 
 	  `);
   });
