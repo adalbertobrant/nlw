@@ -32,35 +32,22 @@
               <label for="subject">Consultoria</label>
               <select name="subject" id="subject">
                 <option value="" disabled="" hidden=""
-                  >Selecione uma opção</option
-                >
-                <option value="1">Planejamento Ortodôntico</option>
-                <option value="2">Análise Facial</option>
-                <option value="3">Análise 3D</option>
-                <option value="4">Análise Dinâmica das Arcadas</option>
-                <option value="5">Aparatologia Extra-Facial</option>
-                <option value="6">Aparelhos Ortopédicos - Intra Orais</option>
-                <option value="7">Fios Ortodonticos</option>
-                <option value="8">Ética Ortodôntica</option>
-                <option value="9">Mecânica Ortodôntica</option>
-                <option value="10">Discrepâncias Dentárias</option>
-                <option value="11">Marketing Ortodôntico</option>
-                <option value="12">Artigos,Monografias,Dissertações</option>
+                  >Selecione uma opção</option>
+                {%for subject in subjects %} 
+                <option value="{{loop.index}}" {{"selected" if filters.subject ==loop.index}}>{{subject}}</option>
+                {%endfor%}
+                
+                
               </select>
             </div>
             <div class="select-block">
               <label for="weekday">Dia da semana</label>
               <select name="weekday" id="weekday">
-                <option value="" disabled="" hidden=""
-                  >Selecione uma opção</option
-                >
-                <option value="0">Domingo</option>
-                <option value="1">Segunda-feira</option>
-                <option value="2">Terça-feira</option>
-                <option value="3">Quarta-feira</option>
-                <option value="4">Quinta-feira</option>
-                <option value="5">Sexta-feira</option>
-                <option value="6">Sábado</option>
+                <option value="" disabled="" hidden="">Selecione uma opção</option>
+                {%for weekday in weekdays %} <!--dentro do for loop para o nunjunk o select name deve ser o name atribuido no caso weekday-->
+                <option value="{{loop.index0}}" {{"selected" if filters.weekday == loop.index0 }}>{{weekday}}</option>
+                {%endfor%}
+                
               </select>
             </div>
             <div class="input-block">
@@ -69,6 +56,7 @@
                 name="time"
                 id="time"
                 type="time"
+                value="{{filters.time}}"
                 min="08:00"
                 max="21:00"
                 required
@@ -79,7 +67,31 @@
         </div>
       </header>
       <main>
+        <!--Estrutura de repetição template engine-->
+        {%for x in consults %}
         <article class="teacher-item">
+          <header>
+            <img src="{{x.avatar}}" alt="{{x.name}}" />
+            <div>
+              <strong>{{x.name}}</strong>
+              <span>{{x.subject}}</span>
+            </div>
+          </header>
+          <p>{{x.bio}}</p>
+          <footer>
+            <p>Valor/Consultoria <strong>R$ {{x.cost}}</strong></p>
+            <!--<button type="button"></button>-->
+            <a
+              href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{x.whatsapp}}&text=ORTHOCONSULT INFORMA => Tenho interesse na consultoria de {{x.subject}} dada por {{x.name}}"
+              class="button"
+              target="_blank"
+              ><img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Entrar em
+              contato
+            </a>
+          </footer>
+        </article>
+        {%endfor%}
+        <!--<article class="teacher-item">
           <header>
             <img
               src="./images/consultor/lauraCarvalho.png"
@@ -142,7 +154,7 @@
             </button>
           </footer>
         </article>
-      </main>
+      --></main>
     </div>
   </body>
 </html>
