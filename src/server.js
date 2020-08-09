@@ -46,6 +46,7 @@ const subjects = [
   'Marketing Ortodôntico',
   'Artigos,Monografias,Dissertações',
   'Produtos digitais',
+  'Outros',
 ];
 const weekdays = [
   'Domingo',
@@ -56,6 +57,11 @@ const weekdays = [
   'Sexta-feira',
   'Sábado',
 ];
+//transforma número em string
+function getSubject(subjectNumber) {
+  const position = +subjectNumber - 1;
+  return subjects[position];
+}
 
 //configuração do nunjuncks
 nunjuncks.configure('src/views', {
@@ -89,5 +95,14 @@ function consultores(req, res) {
 
 // formulário para professores
 function giveClasses(req, res) {
-  return res.render('give-classes.html');
+  const data = req.query;
+  const isEmpty = Object.keys(data).length > 0;
+  // adicionar a variável data a lista de consults
+  if (isEmpty) {
+    data.subject = getSubject(data.subject);
+    consults.push(data);
+    return res.redirect('/consultores');
+  } else {
+    return res.render('give-classes.html', { subjects, weekdays });
+  }
 }

@@ -42,14 +42,14 @@
               <input name="name" id="name" type="text" required />
             </div>
             <div class="input-block">
-              <label for="avatar">Foto perfil</label>
-              <input
-                type="file"
+              <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
+              <!--type="file"
                 name="avatar"
                 id="avatar"
                 accept="image/*"
-                required
-              />
+                required-->
+              <input
+              type="url" name="avatar" id="avatar" required/>
             </div>
             <div class="input-block">
               <label for="whatsapp"
@@ -76,18 +76,10 @@
               <label for="subject">Temas</label>
               <select name="subject" id="subject" required>
                 <option value="">Selecione uma opção</option>
-                <option value="1">Planejamento Ortodôntico</option>
-                <option value="2">Análise Facial</option>
-                <option value="3">Análise 3D</option>
-                <option value="4">Análise Dinâmica das Arcadas</option>
-                <option value="5">Aparatologia Extra-Facial</option>
-                <option value="6">Aparelhos Ortopédicos - Intra Orais</option>
-                <option value="7">Fios Ortodonticos</option>
-                <option value="8">Ética Ortodôntica</option>
-                <option value="9">Mecânica Ortodôntica</option>
-                <option value="10">Discrepâncias Dentárias</option>
-                <option value="11">Marketing Ortodôntico</option>
-                <option value="12">Artigos,Monografias,Dissertações</option>
+                {%for subject in subjects %} 
+                <option value="{{loop.index}}">{{subject}}</option>
+                {%endfor%}
+
               </select>
             </div>
             <div class="input-block">
@@ -97,7 +89,7 @@
                 id="cost"
                 type="number"
                 min="50.00"
-                max="500.00"
+                max="1500.00"
                 step="0.25"
                 required
               />
@@ -113,22 +105,16 @@
                 <label for="weekday">Dia da semana</label>
                 <select name="weekday[]" required>
                   <option value="">Selecione uma opção</option>
-                  <option value="0">Domingo</option>
-                  <option value="1">Segunda-feira</option>
-                  <option value="2">Terça-feira</option>
-                  <option value="3">Quarta-feira</option>
-                  <option value="4">Quinta-feira</option>
-                  <option value="5">Sexta-feira</option>
-                  <option value="6">Sábado</option>
+                {%for weekday in weekdays %} <!--dentro do for loop para o nunjunk o select name deve ser o name atribuido no caso weekday-->
+                  <option value="{{loop.index0}}" >{{weekday}}</option>
+                {%endfor%}
                 </select>
               </div>
               <div class="input-block">
                 <label for="time_from">Das</label>
                 <input
                   type="time"
-                  name="time_from[]"
-                  min="09:00"
-                  max="18:00"
+                  name="time_from[]"                  
                   required
                 />
               </div>
@@ -136,9 +122,7 @@
                 <label for="time_to">Até</label>
                 <input
                   type="time"
-                  name="time_to[]"
-                  min="09:00"
-                  max="18:00"
+                  name="time_to[]"                  
                   required
                 />
               </div>
