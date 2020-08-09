@@ -23,14 +23,14 @@
   resize: vertical;
 }
 .input-block,
-.textarea-block textarea {
+.textarea-block {
   position: relative;
 }
 .input-block:focus-within::after,
-.textarea-block:focus-within {
+.textarea-block:focus-within::after {
   content: '';
   width: calc(100% - 3.2rem);
-  height: 4px;
+  height: 2px;
   background: var(--color-primary-light);
   position: absolute;
   left: 1.6rem;

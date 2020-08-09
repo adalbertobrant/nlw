@@ -1,0 +1,23 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adalbertobrant/nlw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adalbertobrant/nlw/issues"
+  },
+  "homepage": "https://github.com/adalbertobrant/nlw#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

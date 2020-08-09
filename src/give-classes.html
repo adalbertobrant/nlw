@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/paginas/header.css" />
+    <link rel="stylesheet" href="./css/paginas/forms.css" />
+    <link rel="stylesheet" href="./css/paginas/page-give-classes.css" />
+    <title>
+      Ortho Consult | Consultorias feitas com muito Amor
+    </title>
+  </head>
+  <body id="page-give-classes">
+    <div id="container">
+      <header class="page-header">
+        <div class="top-bar-container">
+          <a href="/"> <img src="./images/icons/back.svg" alt="Voltar" /></a>
+          <img
+            src="./images/ortho-transparente-modificado.svg"
+            alt="Ortho Consult"
+          />
+        </div>
+        <div class="header-content">
+          <strong>Segurança e Paz para a sua Consultoria Ortodôntica !</strong>
+          <p>
+            Faça o preenchimento do formulário com os seus dados e inicie a sua
+            Consultoria Ortodôntica !
+          </p>
+        </div>
+      </header>
+      <main>
+        <form action="" id="create-class">
+          <fieldset>
+            <legend>Seus dados</legend>
+            <div class="input-block">
+              <label for="name">Nome Completo</label>
+              <input name="name" id="name" type="text" required />
+            </div>
+            <div class="input-block">
+              <label for="avatar">Foto perfil</label>
+              <input
+                type="file"
+                name="avatar"
+                id="avatar"
+                accept="image/*"
+                required
+              />
+            </div>
+            <div class="input-block">
+              <label for="whatsapp"
+                >Whatsapp <small>(somente números)</small></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                data-mask="(99) 99999-9999"
+                name="whatsapp"
+                id="whatsapp"
+                required
+              />
+              <!--<input type="number" name="whatsapp" id="whatsapp" required />-->
+            </div>
+            <div class="textarea-block">
+              <label for="bio">Biografia</label>
+              <textarea name="bio" id="bio"  maxlength="3000" required></textarea>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Sobre a Consultoria</legend>
+            <div class="select-block">
+              <label for="subject">Temas</label>
+              <select name="subject" id="subject" required>
+                <option value="">Selecione uma opção</option>
+                <option value="1">Planejamento Ortodôntico</option>
+                <option value="2">Análise Facial</option>
+                <option value="3">Análise 3D</option>
+                <option value="4">Análise Dinâmica das Arcadas</option>
+                <option value="5">Aparatologia Extra-Facial</option>
+                <option value="6">Aparelhos Ortopédicos - Intra Orais</option>
+                <option value="7">Fios Ortodonticos</option>
+                <option value="8">Ética Ortodôntica</option>
+                <option value="9">Mecânica Ortodôntica</option>
+                <option value="10">Discrepâncias Dentárias</option>
+                <option value="11">Marketing Ortodôntico</option>
+                <option value="12">Artigos,Monografias,Dissertações</option>
+              </select>
+            </div>
+            <div class="input-block">
+              <label for="cost">Custo da Consultoria <small>(R$)</small></label>
+              <input
+                name="cost"
+                id="cost"
+                type="number"
+                min="50.00"
+                max="500.00"
+                step="0.25"
+                required
+              />
+            </div>
+          </fieldset>
+          <fieldset id="schedule-items">
+            <legend>
+              Horários disponíveis
+              <button type ="button" id="add-time">+Novo Horário</button>
+            </legend>
+            <div class="schedule-item">
+              <div class="select-block">
+                <label for="weekday">Dia da semana</label>
+                <select name="weekday[]" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="0">Domingo</option>
+                  <option value="1">Segunda-feira</option>
+                  <option value="2">Terça-feira</option>
+                  <option value="3">Quarta-feira</option>
+                  <option value="4">Quinta-feira</option>
+                  <option value="5">Sexta-feira</option>
+                  <option value="6">Sábado</option>
+                </select>
+              </div>
+              <div class="input-block">
+                <label for="time_from">Das</label>
+                <input
+                  type="time"
+                  name="time_from[]"
+                  min="09:00"
+                  max="18:00"
+                  required
+                />
+              </div>
+              <div class="input-block">
+                <label for="time_to">Até</label>
+                <input
+                  type="time"
+                  name="time_to[]"
+                  min="09:00"
+                  max="18:00"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <footer>
+          <p>
+            <img src="./images/icons/warning.svg" alt="Aviso importante" />
+            Importante!<br> 
+            Preencha todos os dados</br>
+          </p>
+          <button type="submit" form="create-class">Salvar cadastro</button>
+        </footer>
+      </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+    <script src="./scripts/addField.js"></script>
+  </body>
+</html>
