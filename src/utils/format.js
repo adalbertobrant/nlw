@@ -31,11 +31,12 @@ function getSubject(subjectNumber) {
 }
 // converte horas em minutos
 function toMinutes(timeInHours) {
-  let { hours, minutes } = timeInHours.spli(':');
+  let { hours, minutes } = timeInHours.split(':');
   return Number(hours) * 60 + Number(minutes);
 }
 module.exports = {
   subjects,
   weekdays,
   getSubject,
+  toMinutes,
 };

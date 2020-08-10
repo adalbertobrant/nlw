@@ -1,4 +1,4 @@
-const { subjects, weekdays, getSubject } = require('./utils/format');
+const { subjects, weekdays, getSubject, toMinutes } = require('./utils/format');
 const Database = require('./database/db');
 
 //pagina inicial
@@ -13,6 +13,8 @@ function consultores(req, res) {
   }
 
   // conversão de horas para minutos
+  const epochMinutes = toMinutes(filters.time);
+  console.log(epochMinutes);
 
   const query = `
   	SELECT classes.*, proffys.*
