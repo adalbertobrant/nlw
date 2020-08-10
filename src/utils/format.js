@@ -31,7 +31,7 @@ function getSubject(subjectNumber) {
 }
 // converte horas em minutos
 function toMinutes(timeInHours) {
-  let { hours, minutes } = timeInHours.split(':');
+  let [hours, minutes] = timeInHours.split(':'); // desconstrução do array pegando dois elementos
   return Number(hours) * 60 + Number(minutes);
 }
 module.exports = {

@@ -14,7 +14,6 @@ function consultores(req, res) {
 
   // conversão de horas para minutos
   const epochMinutes = toMinutes(filters.time);
-  console.log(epochMinutes);
 
   const query = `
   	SELECT classes.*, proffys.*
@@ -25,8 +24,8 @@ function consultores(req, res) {
     	FROM class_schedule
     	WHERE class_schedule.class_id = classes.id
     	AND class_schedule.weekday = ${filters.weekday}
-    	AND class_schedule.time_from <= ${filters.time_from}
-    	AND class_schedule.time_to > ${filters.time_to}
+    	AND class_schedule.time_from <= ${epochMinutes}
+    	AND class_schedule.time_to > ${epochMinutes}
 	)
   `;
 
