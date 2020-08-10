@@ -12,7 +12,7 @@ Database.then(async (db) => {
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.',
   };
   classValue = {
-    subject: 'Oclusão',
+    subject: 1,
     cost: '50',
   };
   classScheduleValues = [
@@ -40,4 +40,16 @@ Database.then(async (db) => {
     JOIN classes ON (classes.proffy_id = proffys.id)
     WHERE classes.proffy_id = 1;
   `);
+  // o horário que a pessoa trabalha, por exemplo, é das 8h - 18h
+  // o horário do time_from precisa ser menor ou igual ao horário solicitado
+  // o time_to precisa ser acima
+  const selectClassesSchedules = await db.all(`
+    SELECT class_schedule.* 
+    FROM class_schedule
+    WHERE class_schedule.class_id = 1
+    AND class_schedule.weekday = "0"
+    AND class_schedule.time_from <= "520"
+    and class_schedule.time_to > "520"
+  `);
+  console.log(selectClassesSchedules);
 });
