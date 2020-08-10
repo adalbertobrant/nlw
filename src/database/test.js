@@ -32,5 +32,12 @@ Database.then(async (db) => {
   //consultar dados
   // todos os proffys
   const selectedProffys = await db.all('SELECT * FROM proffys');
-  console.log(selectedProffys);
+  //consultar as classes de um determinado professor
+  //e trazer junto os dados do professor
+  const selectClassesAndProffys = await db.all(`
+    SELECT classes.*, proffys.*
+    FROM proffys
+    JOIN classes ON (classes.proffy_id = proffys.id)
+    WHERE classes.proffy_id = 1;
+  `);
 });
