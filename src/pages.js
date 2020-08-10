@@ -26,3 +26,8 @@ function giveClasses(req, res) {
     return res.render('give-classes.html', { subjects, weekdays });
   }
 }
+module.exports = {
+  pageLanding,
+  consultores,
+  giveClasses,
+};
