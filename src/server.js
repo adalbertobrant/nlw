@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const nunjuncks = require('nunjucks');
+const { subjects, weekdays, getSubject } = require('./utils/format');
 
 //configuração do nunjuncks
 nunjuncks.configure('src/views', {
