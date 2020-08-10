@@ -12,6 +12,8 @@ function consultores(req, res) {
     return res.render('consultores.html', { filters, subjects, weekdays });
   }
 
+  // conversão de horas para minutos
+
   const query = `
   	SELECT classes.*, proffys.*
     FROM proffys

@@ -29,6 +29,11 @@ function getSubject(subjectNumber) {
   const position = +subjectNumber - 1;
   return subjects[position];
 }
+// converte horas em minutos
+function toMinutes(timeInHours) {
+  let { hours, minutes } = timeInHours.spli(':');
+  return Number(hours) * 60 + Number(minutes);
+}
 module.exports = {
   subjects,
   weekdays,
