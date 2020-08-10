@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const nunjuncks = require('nunjucks');
+const { pageLanding, consultores, giveClasses } = require('../src/pages');
 
 //configuração do nunjuncks
 nunjuncks.configure('src/views', {
