@@ -24,9 +24,13 @@ const weekdays = [
   'Sexta-feira',
   'Sábado',
 ];
-
 //transforma número em string
 function getSubject(subjectNumber) {
   const position = +subjectNumber - 1;
   return subjects[position];
 }
+module.exports = {
+  subjects,
+  weekdays,
+  getSubject,
+};
