@@ -65,6 +65,18 @@
         </div>
       </header>
       <main>
+        {% if consults == "" %}
+        <script>console.log("sem resultados");</script>
+        <p class= "no-results">Não temos Consultores para esse horário.
+        Nos envie uma mensagem no whatsapp caso tenha sido um erro
+        <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5534991179515&text=Hello, OrthoConsult => Achei um erro no sistema"
+              class="button"
+              target="_blank"
+              ><img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Reportar erro</a>
+        </p>
+
+
+        {% else %}
         <!--Estrutura de repetição template engine-->
         {%for x in consults %}
         <article class="teacher-item">
@@ -89,70 +101,9 @@
           </footer>
         </article>
         {%endfor%}
-        <!--<article class="teacher-item">
-          <header>
-            <img
-              src="./images/consultor/lauraCarvalho.png"
-              alt="Laura Carvalho"
-            />
-            <div>
-              <strong>
-                Dra. Laura Carvalho
-                <p><span>Ortodontia Arcos Gummetal</span></p>
-              </strong>
-            </div>
-          </header>
-          <p>
-            Autora do livro Tratamento das más oclusões, com ênfase no plano
-            oclusal posterior.
-          </p>
-          <p>
-            Responsável pela introdução da técnica do Dr.Sadao Sato no Brasil,
-            profunda conhecedora da Ortodontia com Arcos Gummetal. Professora a
-            mais de 30 anos de diagnóstico, mecânica e técnicas ortodônticas em
-            Ortodontia Bioprogressiva.
-          </p>
-          <footer>
-            <p>Preço/Consultoria <strong>R$200,00</strong></p>
-            <button type="button">
-              <img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Entre em
-              contato
-            </button>
-          </footer>
-        </article>
-
-        <article class="teacher-item">
-          <header>
-            <img
-              src="./images/consultor/marisaManhas.png"
-              alt="Laura Carvalho"
-            />
-            <div>
-              <strong>
-                Dra. Marisa Manhas
-                <p><span>Ortodontia Arcos Gummetal</span></p>
-              </strong>
-            </div>
-          </header>
-          <p>
-            Autora do livro Tratamento das más oclusões, com ênfase no plano
-            oclusal posterior.
-          </p>
-          <p>
-            Uma das responsáveis pela introdução da técnica do Dr.Sadao Sato no
-            Brasil, profunda conhecedora da Ortodontia com Arcos Gummetal.
-            Professora a mais de 30 anos de diagnóstico, mecânica e técnicas
-            ortodônticas em Ortodontia Bioprogressiva.
-          </p>
-          <footer>
-            <p>Preço/Consultoria <strong>R$200,00</strong></p>
-            <button type="button">
-              <img src="./images/icons/whatsapp.svg" alt="Whatsapp" />Entre em
-              contato
-            </button>
-          </footer>
-        </article>
-      --></main>
+        {% endif %}
+        
+      </main>
     </div>
   </body>
 </html>
