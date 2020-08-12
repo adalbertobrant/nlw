@@ -23,6 +23,10 @@ function execute(db) {
 		time_from INTEGER,
 		time_to INTEGER
 	);
+	CREATE TABLE IF NOT EXISTS contador(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		acesso_site INTEGER
+	);
 
   `);
 }
