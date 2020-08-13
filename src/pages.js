@@ -1,4 +1,10 @@
-const { subjects, weekdays, getSubject, toMinutes } = require('./utils/format');
+const {
+  subjects,
+  weekdays,
+  getSubject,
+  toMinutes,
+  counter,
+} = require('./utils/format');
 const Database = require('./database/db');
 
 //pagina inicial
