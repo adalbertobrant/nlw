@@ -9,7 +9,7 @@ const Database = require('./database/db');
 
 //pagina inicial
 function pageLanding(req, res) {
-  await counter();
+  counter();
   return res.render('index.html');
 }
 //pagina consultores - professores
