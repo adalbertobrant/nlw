@@ -27,6 +27,11 @@ function execute(db) {
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		acesso_site INTEGER
 	);
+	CREATE TABLE IF NOT EXISTS acessos(
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		endereco_ip TEXT,
+		
+	)
 
   `);
 }
