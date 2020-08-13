@@ -31,7 +31,7 @@ function execute(db) {
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		endereco_ip TEXT,
 		
-	)
+	);
 
   `);
 }
