@@ -1,7 +1,9 @@
 const express = require('express');
 const server = express();
 const nunjuncks = require('nunjucks');
-const env = require('dotenv');
+
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
 const {
   pageLanding,
@@ -25,4 +27,4 @@ server
   .get('/consultores', consultores)
   .get('/give-classes', giveClasses)
   .post('/save-classes', saveClasses)
-  .listen(env);
+  .listen(port);
