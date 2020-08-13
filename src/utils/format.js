@@ -38,8 +38,8 @@ function toMinutes(timeInHours) {
   return Number(hours) * 60 + Number(minutes);
 }
 
-function counter() {
-  const contador = http.get(
+async function counter() {
+  const contador = await http.get(
     { host: 'api.ipify.org', port: 80, path: '/' },
     function (resp) {
       resp.on('data', function (ip) {
