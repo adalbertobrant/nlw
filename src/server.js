@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const nunjuncks = require('nunjucks');
+const env = require('dotenv');
 
 const {
   pageLanding,
@@ -24,4 +25,4 @@ server
   .get('/consultores', consultores)
   .get('/give-classes', giveClasses)
   .post('/save-classes', saveClasses)
-  .listen();
+  .listen(env);
