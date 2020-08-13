@@ -1,3 +1,6 @@
+// lib para o contador
+const http = require('http');
+
 // consultorias disponíveis
 const subjects = [
   'Planejamento Ortodôntico',
@@ -34,9 +37,22 @@ function toMinutes(timeInHours) {
   let [hours, minutes] = timeInHours.split(':'); // desconstrução do array pegando dois elementos
   return Number(hours) * 60 + Number(minutes);
 }
+
+function counter() {
+  const contador = http.get(
+    { host: 'api.ipify.org', port: 80, path: '/' },
+    function (resp) {
+      resp.on('data', function (ip) {
+        // envia os dados do ip
+        console.log(' ip = ' + ip);
+      });
+    }
+  );
+}
 module.exports = {
   subjects,
   weekdays,
   getSubject,
   toMinutes,
+  counter,
 };

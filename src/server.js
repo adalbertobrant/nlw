@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const nunjuncks = require('nunjucks');
+const http = require('./utils/counter');
 const {
   pageLanding,
   consultores,
